@@ -1,0 +1,4 @@
+console.log("<%= @project.errors.full_messages.inspect %>")
+$('#new_project').remove()
+$('#new_link').show()
+$('ul').append('<%= j render(@project) %>')
