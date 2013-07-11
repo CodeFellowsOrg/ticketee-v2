@@ -7,17 +7,17 @@ feature 'Creating Projects' do
   end
 
   scenario "can create a project" do
-    fill_in 'Name', :with => 'TextMate 2'
-    click_button 'Create Project'
+    fill_in 'Name', :with => 'Vim FOREVAH!'
+    click_button 'Henceforth the project shall be created'
     page.should have_content('Project has been created.')
 
-    project = Project.find_by_name("TextMate 2")
+    project = Project.find_by_name("Vim FOREVAH!")
     page.current_url.should == project_url(project)
-    find("title").should have_content("TextMate 2 - Projects - Ticketee")
+    find("title").should have_content("Vim FOREVAH! - Projects - Ticketee")
   end
 
   scenario "can not create a project without a name" do
-    click_button 'Create Project'
+    click_button 'Henceforth the project shall be created'
     page.should have_content("Project has not been created.")
     page.should have_content("Name can't be blank")
   end
